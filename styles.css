@@ -1,40 +1,57 @@
 * {
-    background-color: black;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.led-sticks {
-    display: flex; 
-    gap: 15vw;
-    justify-content: center;;
-    margin-top: 48dvh
+body {
+    background: black;
+    font-family: 'Bebas Neue'
 }
 
-.sticks {
-    width: 2vw;
-    height: 20vw; 
-    background: rgb(248, 14, 236);
-    border-radius: 50px;
-    border-radius: 50px;
-    box-shadow: 0 0 80px blueviolet;
-    animation: ledEffect 4s infinite
+.teaser {
+    position: relative;
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-@keyframes ledEffect {
-    0%   { opacity: 0.0; box-shadow: 0 3 20px blue; }
-    50%  { opacity: 1;   box-shadow: 0 2 80px rgb(218, 7, 218); }
-    100% { opacity: 0.0; box-shadow: 0 0 20px violet; }
+.teaser img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    opacity: 25%;
 }
 
-@media (orientation: landscape) {
-    .sticks {
-    margin-top: -19vh;
-    }
+
+.teaser h1 {
+    position: absolute;
+    z-index: 8;
+    font-family: 'Bebas Neue';
+    font-size: clamp(2rem, 2vw, 4rem);
+    color: rgb(255, 255, 255);
+    font-style: oblique;
+    left: 70vw
+}
+
+.teaser span {
+    color: rgb(255, 0, 179)
 }
 
 @media (orientation: portrait) {
-    .led-sticks {
-        margin-top: 43dvh
+    .teaser h1 {
+        font-size: 3.50vw;
+        left: 56dvw
+    }
+    
+}
+
+@media (orientation: landscape) {
+    .teaser h1 {
+        left: 60vw
     }
 }
